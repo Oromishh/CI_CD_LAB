@@ -58,3 +58,13 @@ def save_lines(lines=None, filename=None):
     except:
         return False
 
+if __name__ == '__main__':
+    raw_file_content = read_file("raw.txt")
+    parsed_lines = parse_lines(raw_file_content)
+    args = get_arguments()
+    keywoard = get_keyword(arguments=args)
+    if not keywoard:
+        raise Exception("No keywoard!")
+
+    filtered_lines = filter_lines(parsed_lines, keywoard)
+    save_lines(filtered_lines, "filtered.txt")
