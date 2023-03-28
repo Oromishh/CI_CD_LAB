@@ -10,5 +10,5 @@ def get_arguments():
     except:
         return {}
 
-result = get_arguments()
-print(result)
+def get_keyword(arguments={}):
+    return arguments.get("keyword", None)
